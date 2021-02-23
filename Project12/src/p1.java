@@ -19,10 +19,14 @@ public class p1 {
 			if(l==0 && p==0 && v==0)
 				break;
 			
-			int result = (v/p)*l;
+			int result = 0;
+			
+			if(v%p <=l)
+				result = (v/p)*l+v%p;
+			else
+				result = (v/p)*l +l;
 			
 			
-			result= result + Math.min(v%p, l);
 			arr[i]= result;
 			i++;
 			
@@ -30,7 +34,7 @@ public class p1 {
 			
 		}
 		for(int j=0; j<i; j++) {
-			System.out.println(arr[j]);
+			System.out.println("Case "+(j+1)+": "+arr[j]);
 		}
 		sc.close();
 		
